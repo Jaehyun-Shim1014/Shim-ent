@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>비급여 진료비 | 심재이비인후과</title>
+<title>비급여 진료비용 안내 | 심재이비인후과</title>
 <meta name="description" content="심재이비인후과 비급여 진료비 안내">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
@@ -22,12 +22,12 @@ nav a{text-decoration:none;color:var(--ink);white-space:nowrap;padding:4px 0}nav
 @media(max-width:700px){header .wrap{flex-direction:column;align-items:flex-start;gap:0;height:auto;padding-top:8px;padding-bottom:4px}nav{width:100%;gap:16px;padding-bottom:6px}}
 main{padding:40px 0 64px;min-height:60vh}
 .back{display:inline-block;font-size:14px;margin-bottom:14px;text-decoration:none}
-h1{font:700 28px var(--serif);margin:0 0 6px;color:var(--c-d)}.sub{color:var(--mut);font-size:14px;margin:0 0 22px}
+h1{font:700 28px var(--serif);margin:0 0 12px;color:var(--c-d)}.intro{margin:0 0 8px;font-size:15.5px}.sub{color:var(--mut);font-size:14px;margin:0 0 22px}
 .empty{color:var(--mut);padding:28px 0;border-top:1px solid var(--line)}
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:15px}
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--c-t);color:var(--c-d);font-weight:500;white-space:nowrap}td.p{white-space:nowrap;text-align:right;font-weight:500}th.p{text-align:right}
-tr:last-child td{border-bottom:0}.cat{color:var(--mut);white-space:nowrap}
+tr:last-child td{border-bottom:0}tr.gs td{border-top:2px solid #e3c9ce}.cat{color:var(--mut)}
 .tw{overflow-x:auto}
 .files a{display:flex;justify-content:space-between;gap:12px;padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
 .files a:first-child{border-top:1px solid var(--line)}.files a:hover{color:var(--c)}.files .act{color:var(--c-d);font-size:14px;white-space:nowrap}
@@ -42,7 +42,8 @@ footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{m
 </div></header>
 <main><div class="wrap">
 <a class="back" href="index.html#guide">‹ 이용안내로 돌아가기</a>
-<h1>비급여 진료비</h1>
+<h1>비급여 진료비용 안내</h1>
+<p class="intro">「의료법」 제45조에 따라 건강보험이 적용되지 않는 비급여 항목의 진료비용을 안내합니다. 건강보험 적용 여부는 진료 내용과 기준에 따라 달라질 수 있으니 자세한 사항은 접수처에 문의해 주세요.</p>
 <p class="sub" id="upd"></p>
 <div id="box"></div>
 </div></main>
@@ -56,7 +57,8 @@ footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{m
 var S=window.SITE||{},L=S.fees||[],box=document.getElementById("box");
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 if(S.feesUpdated)document.getElementById("upd").textContent="최종 수정일 "+S.feesUpdated;
-box.innerHTML=L.length?'<div class="tw"><table><thead><tr><th>구분</th><th>항목</th><th class="p">금액</th><th>비고</th></tr></thead><tbody>'+L.map(function(r){return'<tr><td class="cat">'+esc(r.category)+'</td><td>'+esc(r.name)+'</td><td class="p">'+esc(r.price)+'</td><td>'+esc(r.note)+'</td></tr>'}).join("")+'</tbody></table></div>':'<p class="empty">등록된 비급여 진료비가 없습니다. 개원 후 이곳에 올라옵니다.</p>';
+var prev=null;
+box.innerHTML=L.length?'<div class="tw"><table><thead><tr><th>항목</th><th>상세</th><th class="p">금액 (원)</th></tr></thead><tbody>'+L.map(function(r,i){var gs=(i>0&&r.grp!==prev)?' class="gs"':'';prev=r.grp;return'<tr'+gs+'><td>'+esc(r.name)+'</td><td class="cat">'+esc(r.detail)+'</td><td class="p">'+esc(r.price)+'</td></tr>'}).join("")+'</tbody></table></div>':'<p class="empty">등록된 비급여 진료비가 없습니다. 개원 후 이곳에 올라옵니다.</p>';
 })();
 </script>
 </body>
