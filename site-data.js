@@ -20,6 +20,32 @@ window.SITE = {
      비워 두면 '네이버 지도에서 보기' 버튼만 나옵니다. */
   naverMapClientId: "",
 
+  /* 상단 소개 배경: extra에 적은 사진과 둘러보기(gallery) 사진이 돌아가며 나옵니다.
+     useGallery를 false로 바꾸면 gallery 사진은 빼고 extra 사진만 사용합니다. interval은 넘어가는 시간(밀리초). */
+  hero: { extra: ["images/lobby.jpg"], useGallery: true, interval: 5000 },
+
+  /* 둘러보기 사진: images/gallery 폴더에 넣고 아래에 추가하세요. 위에서부터 순서대로 보입니다. */
+  gallery: [
+    // { img: "images/gallery/waiting.jpg", caption: "대기실 · 접수" },
+    // { img: "images/gallery/exam.jpg", caption: "진료실" }
+  ],
+
+  /* 검사장비: cat은 분류 표시, img는 images/equipment 폴더의 사진 (없으면 '사진 자리'). */
+  equipment: [
+    { cat: "청력", name: "청력검사", img: "images/topics/hearing-test.svg",
+      text: "헤드폰으로 들려주는 여러 높낮이의 소리와 말소리로 들리는 정도를 확인합니다. 난청의 정도와 유형을 알아보는 기본 검사입니다." },
+    { cat: "청력", name: "고막 · 이음향방사검사", img: "images/topics/oae.svg",
+      text: "고막의 움직임과 달팽이관의 반응을 확인하는 검사입니다. 귀에 작은 프로브를 넣어 측정하며, 통증 없이 짧은 시간에 진행됩니다." },
+    { cat: "청력", name: "청성뇌간반응검사", img: "images/topics/abr.svg",
+      text: "소리를 들려주고 청신경과 뇌간에서 나오는 반응을 전극으로 측정합니다. 직접 응답하기 어려운 경우의 청력 확인과 청각장애 진단에 활용됩니다." },
+    { cat: "어지럼증", name: "비디오 안진검사", img: "images/topics/vng.svg",
+      text: "특수 안경에 달린 카메라로 눈의 움직임(안진)을 기록합니다. 어지러움의 원인을 찾는 데 도움을 줍니다." },
+    { cat: "어지럼증", name: "균형검사", img: "images/topics/balance.svg",
+      text: "서 있는 상태에서 몸의 중심이 흔들리는 정도를 측정해 균형 능력을 객관적으로 확인합니다." },
+    { cat: "코 · 부비동", name: "저선량 CT", img: "images/topics/ct.svg",
+      text: "방사선량을 줄여 코 주변의 부비동과 귀의 구조를 촬영합니다. 촬영한 영상으로 구조와 염증 상태를 확인합니다." }
+  ],
+
   /* 수면·귀·목·코 항목: 항목 이름을 누르면 아래로 사진과 설명이 펼쳐집니다.
      img는 images/topics 폴더에 넣은 사진 파일명입니다. (없으면 '사진 자리'로 표시) */
   topics: {
@@ -59,12 +85,12 @@ window.SITE = {
       { name: "음성장애", img: "images/topics/voice.svg",
         text: "목소리가 쉬거나 갈라지고, 소리가 잘 나오지 않거나, 말할 때 목이 쉽게 피로해지는 증상입니다. 후두내시경 등을 통해 원인을 분석합니다." },
       { name: "구강 내 종물", img: "images/topics/oral-mass.svg",
-        text: "입안의 혀, 볼 안쪽, 잇몸, 입천장 등에 생긴 혹이나 덩어리입니다. 크기와 모양, 지속 기간을 확인하고 직접 살펴 원인을 알아봅니다. 원인에 따라 경과를 지켜보거나 약물로 치료하고, 필요시 절제 및 조직검사를 시행하기도 합니다. 필요시 3차병원으로 의뢰해 드립니다. 입안의 혹이 2주 이상 낫지 않거나 점점 커지면 진료를 받아 보세요." }
+        text: "입안의 혀, 볼 안쪽, 잇몸, 입천장 등에 생긴 혹이나 덩어리입니다. 크기와 모양, 지속 기간을 확인하고 직접 살펴 원인을 알아봅니다. 원인에 따라 경과를 지켜보거나 약물로 치료하고, 절제 및 조직검사를 필요로 하기도 합니다. 입안의 혹이 2주 이상 낫지 않거나 점점 커지면 진료를 받아 보세요." }
     ],
     nose: [
-      { name: "알레르기성 비염", img: "images/topics/rhinitis.jpg",
-        text: "재채기, 맑은 콧물, 코막힘, 코 가려움이 반복되는 질환입니다. 증상이 심해지는 시기와 환경을 확인하고 약물치료와 생활 관리 방법을 안내합니다." },
-      { name: "부비동염", img: "images/topics/sinusitis.jpg",
+      { name: "알레르기성 비염", img: "images/topics/rhinitis.svg",
+        text: "재채기, 맑은 콧물, 코막힘, 코 가려움이 반복되는 질환입니다. 증상이 심해지는 시기와 환경을 확인하고, 알레르기의 원인을 파악하여 약물치료와 생활 관리 방법을 안내합니다." },
+      { name: "부비동염", img: "images/topics/sinusitis.svg",
         text: "누런 콧물, 코막힘, 얼굴이 눌리는 느낌, 콧물이 목으로 넘어가는 증상이 나타납니다. 코 안을 직접 살펴 상태를 확인하고 치료 방향을 정합니다." }
     ]
   },
