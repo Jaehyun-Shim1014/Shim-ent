@@ -338,7 +338,6 @@ if(S.naverMapClientId){
   document.head.appendChild(sc);
 }
 
-if(S.showFees===false){var fc=document.getElementById("feeCard");if(fc)fc.remove()}
 var EQ=S.equipment||[],eqEl=document.getElementById("eq");
 eqEl.innerHTML=EQ.length?EQ.map(function(it){return'<article class="eqc"><div class="ph">사진 자리'+(it.img?'<img src="'+encodeURI(it.img)+'" alt="'+esc(it.name)+'" onload="this.parentNode.classList.add(\'has\')" onerror="this.remove()">':'')+'</div><div class="eb">'+(it.cat?'<span class="tag">'+esc(it.cat)+'</span>':'')+'<h3>'+esc(it.name)+'</h3><p>'+esc(it.text)+'</p></div></article>'}).join(""):'<p class="empty">검사장비 안내는 개원 전에 올라옵니다.</p>';
 
