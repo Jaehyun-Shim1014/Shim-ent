@@ -125,7 +125,7 @@ h3.bh{font-size:18px;margin:0 0 10px;color:var(--c-d)}
 .board a,.board .row{display:flex;justify-content:space-between;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
 .board a:hover{color:var(--c)}.board time,.board .act{color:var(--mut);font-size:13.5px;white-space:nowrap}
 .empty{color:var(--mut);margin:0}
-.map{aspect-ratio:16/8;min-height:240px;border:1.5px dashed var(--c);border-radius:14px;display:grid;place-items:center;color:var(--c);background:var(--c-t);margin:16px 0 0;text-align:center;padding:12px;position:relative;overflow:hidden}
+.map{width:100%;box-sizing:border-box;aspect-ratio:16/8;min-height:240px;border:1.5px dashed var(--c);border-radius:14px;display:grid;place-items:center;color:var(--c);background:var(--c-t);margin:16px 0 0;text-align:center;padding:12px;position:relative;overflow:hidden}
 .map.on{border:1px solid var(--line);display:block;padding:0}
 .addr{margin:16px 0 0;padding:0;list-style:none}.addr li{padding:4px 0}.addr b{display:inline-block;min-width:56px;color:var(--c-d)}
 footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{margin:2px 0}
@@ -138,6 +138,7 @@ footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{m
 .pop-f button:last-child{background:var(--c);color:#fff;border-color:var(--c)}
 :focus-visible{outline:2px solid var(--c-d);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:700px){.map{aspect-ratio:auto;height:240px}.map.on{height:300px}}
 </style>
 <link rel="stylesheet" href="nav.css">
 </head>
