@@ -63,7 +63,7 @@ h1{font:700 clamp(26px,4.5vw,36px)/1.3 var(--serif);margin:0 0 12px;color:var(--
 .d.today{outline:2px solid var(--c-d);outline-offset:2px}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mut);margin-top:12px}
 .legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:-1px}
-.note{font-size:13px;margin:8px 0 0;color:var(--c-d)}
+.note{font-size:13px;margin:8px 0 0;color:var(--c-d);white-space:pre-line}
 .hrs{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--mut)}
 .hrs div{display:flex;justify-content:space-between;padding:2px 0}.hrs b{color:var(--c-d);font-weight:500}
 section{padding:48px 0;border-top:1px solid var(--line)}
@@ -231,7 +231,7 @@ footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{m
 <section id="guide"><div class="wrap">
   <h2>이용안내</h2>
   <div class="two">
-    <a class="gcard" href="fees.html"><strong>비급여 진료비</strong><span>항목별 진료비 표를 확인합니다</span><i aria-hidden="true">›</i></a>
+    <a class="gcard" id="feeCard" href="fees.html"><strong>비급여 진료비</strong><span>항목별 진료비 표를 확인합니다</span><i aria-hidden="true">›</i></a>
     <a class="gcard" href="forms.html"><strong>서식 자료실</strong><span>대리처방 동의서, 위임장 등 서식을 내려받습니다</span><i aria-hidden="true">›</i></a>
   </div>
 </div></section>
@@ -264,27 +264,33 @@ footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{m
 </div>
 
 <script src="site-data.js"></script>
+<script src="holidays.js"></script>
 <script>
 (function(){
 var S=window.SITE||{},cal=S.calendar||{},now=new Date(),y=now.getFullYear(),m=now.getMonth();
 function two(n){return(n<10?"0":"")+n}
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var HOL=window.HOLIDAYS||{};
 var g=document.getElementById("grid"),ttl=document.getElementById("ttl"),note=document.getElementById("note");
 function draw(){
   var key=y+"-"+two(m+1),c=cal[key]||{},off=c.off||[],sh=c.short||[],op=c.open||[];
-  ttl.textContent=y+"년 "+(m+1)+"월";note.textContent=c.note||"";
+  ttl.textContent=y+"년 "+(m+1)+"월";
+  var hl=[];Object.keys(HOL).sort().forEach(function(k){if(k.indexOf(key+"-")===0&&(op.indexOf(+k.slice(8))<0))hl.push(+k.slice(8)+"일 "+HOL[k])});
+  note.textContent=(hl.length?"공휴일: "+hl.join(", "):"")+(hl.length&&c.note?"\n":"")+(c.note||"");
   var h="";"일월화수목금토".split("").forEach(function(d){h+='<div class="dow">'+d+'</div>'});
   var first=new Date(y,m,1).getDay(),last=new Date(y,m+1,0).getDate();
   for(var i=0;i<first;i++)h+="<div></div>";
   for(var d=1;d<=last;d++){
     var w=new Date(y,m,d).getDay(),cls="";
+    var ds=key+"-"+two(d),hn=HOL[ds]||"";
     if(w===0)cls="off";else if(w===6)cls="short";
+    if(hn)cls="off";
     if(op.indexOf(d)>-1)cls="";
     if(sh.indexOf(d)>-1)cls="short";
     if(off.indexOf(d)>-1)cls="off";
     if(w===0)cls="off";
     if(y===now.getFullYear()&&m===now.getMonth()&&d===now.getDate())cls+=" today";
-    h+='<div class="d '+cls+'">'+d+"</div>";
+    h+='<div class="d '+cls+'"'+(hn?' title="'+esc(hn)+'"':'')+'>'+d+"</div>";
   }
   g.innerHTML=h;
 }
@@ -324,6 +330,7 @@ if(S.naverMapClientId){
   document.head.appendChild(sc);
 }
 
+if(S.showFees===false){var fc=document.getElementById("feeCard");if(fc)fc.remove()}
 var EQ=S.equipment||[],eqEl=document.getElementById("eq");
 eqEl.innerHTML=EQ.length?EQ.map(function(it){return'<article class="eqc"><div class="ph">사진 자리'+(it.img?'<img src="'+encodeURI(it.img)+'" alt="'+esc(it.name)+'" onload="this.parentNode.classList.add(\'has\')" onerror="this.remove()">':'')+'</div><div class="eb">'+(it.cat?'<span class="tag">'+esc(it.cat)+'</span>':'')+'<h3>'+esc(it.name)+'</h3><p>'+esc(it.text)+'</p></div></article>'}).join(""):'<p class="empty">검사장비 안내는 개원 전에 올라옵니다.</p>';
 

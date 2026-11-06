@@ -97,31 +97,11 @@ window.SITE = {
     body: "여기에 안내 문구를 입력하세요."
   },
 
-  /* 비급여 진료비 표(fees.html): 한 줄이 표의 한 행입니다. grp이 바뀌는 곳에 구분선이 들어갑니다. */
+  /* 비급여 진료비: showFees가 false면 홈페이지에 표시되지 않습니다(비공개). 공개할 때 true로 바꾸고 fees에 표를 넣습니다.
+     fees 한 줄이 표의 한 행이며, grp 값이 바뀌는 곳에 구분선이 들어갑니다. */
+  showFees: false,
   feesUpdated: "",   // 예: "2027-04-01" (표 위에 '최종 수정일'로 표시)
-  fees: [
-    { name: "독감 백신", detail: "3가, 면역증강 등", price: "35,000~75,000", grp: 0 },
-    { name: "인플루엔자 A·B 바이러스 항원검사", detail: "독감 검사", price: "30,000", grp: 0 },
-    { name: "코로나19 바이러스 항원검사", detail: "코로나 신속항원검사", price: "20,000", grp: 0 },
-    { name: "페라미플루", detail: "독감 치료 수액", price: "100,000", grp: 0 },
-    { name: "수액 치료", detail: "개인 맞춤형 수액", price: "50,000~150,000", grp: 1 },
-    { name: "부스트릭스", detail: "백일해, 디프테리아, 파상풍 백신", price: "50,000", grp: 1 },
-    { name: "싱그릭스 주", detail: "대상포진 백신", price: "250,000", grp: 1 },
-    { name: "싸이모신 알파 원", detail: "면역증강주사", price: "60,000", grp: 1 },
-    { name: "25-OH-Vitamin D, total", detail: "비타민 D 혈액검사", price: "12,000", grp: 1 },
-    { name: "콜레칼시페롤", detail: "비타민 D 근육주사", price: "30,000", grp: 1 },
-    { name: "상급병실료", detail: "1인실", price: "150,000", grp: 2 },
-    { name: "청성뇌간유발반응검사(ABR)", detail: "청각 장애진단 검사", price: "200,000", grp: 2 },
-    { name: "아카리작스정", detail: "설하 면역 치료", price: "210,000", grp: 3 },
-    { name: "라이스정(초기)", detail: "설하 면역 치료", price: "160,000", grp: 3 },
-    { name: "라이스정(유지)", detail: "설하 면역 치료", price: "210,000", grp: 3 },
-    { name: "진단서", detail: "일반", price: "15,000", grp: 4 },
-    { name: "영문진단서", detail: "Medical certificate in English", price: "20,000", grp: 4 },
-    { name: "확인서", detail: "진료/통원/입퇴원", price: "2,000", grp: 4 },
-    { name: "진료기록사본", detail: "1~5매", price: "1,000", grp: 4 },
-    { name: "진료기록사본", detail: "6매 이상", price: "100", grp: 4 },
-    { name: "진료기록(영상)", detail: "DVD", price: "10,000", grp: 4 }
-  ],
+  fees: [],
 
   /* 서식 자료실: 파일은 forms 폴더에 넣고 아래에 추가하세요. */
   forms: [

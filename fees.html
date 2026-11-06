@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>비급여 진료비용 안내 | 심재이비인후과</title>
-<meta name="description" content="심재이비인후과 비급여 진료비 안내">
+<meta name="description" content="심재이비인후과 비급여 진료비 안내"><meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -57,6 +57,7 @@ footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{m
 var S=window.SITE||{},L=S.fees||[],box=document.getElementById("box");
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 if(S.feesUpdated)document.getElementById("upd").textContent="최종 수정일 "+S.feesUpdated;
+if(S.showFees===false){document.querySelector(".intro").textContent="비급여 진료비용 안내는 준비 중입니다.";L=[];}
 var prev=null;
 box.innerHTML=L.length?'<div class="tw"><table><thead><tr><th>항목</th><th>상세</th><th class="p">금액 (원)</th></tr></thead><tbody>'+L.map(function(r,i){var gs=(i>0&&r.grp!==prev)?' class="gs"':'';prev=r.grp;return'<tr'+gs+'><td>'+esc(r.name)+'</td><td class="cat">'+esc(r.detail)+'</td><td class="p">'+esc(r.price)+'</td></tr>'}).join("")+'</tbody></table></div>':'<p class="empty">등록된 비급여 진료비가 없습니다. 개원 후 이곳에 올라옵니다.</p>';
 })();
