@@ -34,11 +34,12 @@ tr:last-child td{border-bottom:0}tr.gs td{border-top:2px solid #e3c9ce}.cat{colo
 footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{margin:2px 0}
 :focus-visible{outline:2px solid var(--c-d);outline-offset:2px}
 </style>
+<link rel="stylesheet" href="nav.css">
 </head>
 <body>
 <header><div class="wrap">
   <a class="brand" href="index.html"><span class="logo">로고<img src="images/logo.png" alt="" onerror="this.remove()"></span>심재이비인후과</a>
-  <nav aria-label="주요 메뉴"><a href="index.html#intro">병원 소개</a><a href="index.html#hours">진료 시간</a><a href="index.html#sleep">수면</a><a href="index.html#ear">귀</a><a href="index.html#throat">목</a><a href="index.html#nose">코</a><a href="index.html#equip">검사장비</a><a href="index.html#guide" class="on">이용안내</a><a href="index.html#tour">둘러보기</a><a href="faq.html">자주 묻는 질문</a><a href="index.html#visit">오시는 길</a></nav>
+  <nav aria-label="주요 메뉴"><a href="index.html#intro">병원 소개</a><a href="index.html#hours">진료 시간</a><div class="dd"><button type="button" class="ddb" aria-expanded="false" aria-controls="ddm">진료 안내</button><div class="dd-m" id="ddm" hidden><div class="wrap"><a href="index.html#sleep">수면</a><a href="index.html#ear">귀</a><a href="index.html#throat">목</a><a href="index.html#nose">코</a></div></div></div><a href="index.html#equip">검사장비</a><a href="index.html#guide" class="on">이용안내</a><a href="index.html#tour">둘러보기</a><a href="faq.html">자주 묻는 질문</a><a href="index.html#visit">오시는 길</a></nav>
 </div></header>
 <main><div class="wrap">
 <a class="back" href="index.html#guide">‹ 이용안내로 돌아가기</a>
@@ -62,5 +63,6 @@ var prev=null;
 box.innerHTML=L.length?'<div class="tw"><table><thead><tr><th>항목</th><th>상세</th><th class="p">금액 (원)</th></tr></thead><tbody>'+L.map(function(r,i){var gs=(i>0&&r.grp!==prev)?' class="gs"':'';prev=r.grp;return'<tr'+gs+'><td>'+esc(r.name)+'</td><td class="cat">'+esc(r.detail)+'</td><td class="p">'+esc(r.price)+'</td></tr>'}).join("")+'</tbody></table></div>':'<p class="empty">등록된 비급여 진료비가 없습니다. 개원 후 이곳에 올라옵니다.</p>';
 })();
 </script>
+<script src="nav.js"></script>
 </body>
 </html>

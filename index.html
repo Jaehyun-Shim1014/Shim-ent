@@ -139,11 +139,12 @@ footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{m
 :focus-visible{outline:2px solid var(--c-d);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
+<link rel="stylesheet" href="nav.css">
 </head>
 <body>
 <header><div class="wrap">
   <a class="brand" href="#top"><span class="logo">로고<img src="images/logo.png" alt="" onerror="this.remove()"></span>심재이비인후과</a>
-  <nav aria-label="주요 메뉴"><a href="#intro">병원 소개</a><a href="#hours">진료 시간</a><a href="#sleep">수면</a><a href="#ear">귀</a><a href="#throat">목</a><a href="#nose">코</a><a href="#equip">검사장비</a><a href="#guide">이용안내</a><a href="#tour">둘러보기</a><a href="faq.html">자주 묻는 질문</a><a href="#visit">오시는 길</a></nav>
+  <nav aria-label="주요 메뉴"><a href="#intro">병원 소개</a><a href="#hours">진료 시간</a><div class="dd"><button type="button" class="ddb" aria-expanded="false" aria-controls="ddm">진료 안내</button><div class="dd-m" id="ddm" hidden><div class="wrap"><a href="#sleep">수면</a><a href="#ear">귀</a><a href="#throat">목</a><a href="#nose">코</a></div></div></div><a href="#equip">검사장비</a><a href="#guide">이용안내</a><a href="#tour">둘러보기</a><a href="faq.html">자주 묻는 질문</a><a href="#visit">오시는 길</a></nav>
 </div></header>
 
 <main id="top">
@@ -377,5 +378,6 @@ if(P&&P.enabled){
 }
 })();
 </script>
+<script src="nav.js"></script>
 </body>
 </html>

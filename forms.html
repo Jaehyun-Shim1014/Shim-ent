@@ -34,11 +34,12 @@ tr:last-child td{border-bottom:0}.cat{color:var(--mut);white-space:nowrap}
 footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{margin:2px 0}
 :focus-visible{outline:2px solid var(--c-d);outline-offset:2px}
 </style>
+<link rel="stylesheet" href="nav.css">
 </head>
 <body>
 <header><div class="wrap">
   <a class="brand" href="index.html"><span class="logo">로고<img src="images/logo.png" alt="" onerror="this.remove()"></span>심재이비인후과</a>
-  <nav aria-label="주요 메뉴"><a href="index.html#intro">병원 소개</a><a href="index.html#hours">진료 시간</a><a href="index.html#sleep">수면</a><a href="index.html#ear">귀</a><a href="index.html#throat">목</a><a href="index.html#nose">코</a><a href="index.html#equip">검사장비</a><a href="index.html#guide" class="on">이용안내</a><a href="index.html#tour">둘러보기</a><a href="faq.html">자주 묻는 질문</a><a href="index.html#visit">오시는 길</a></nav>
+  <nav aria-label="주요 메뉴"><a href="index.html#intro">병원 소개</a><a href="index.html#hours">진료 시간</a><div class="dd"><button type="button" class="ddb" aria-expanded="false" aria-controls="ddm">진료 안내</button><div class="dd-m" id="ddm" hidden><div class="wrap"><a href="index.html#sleep">수면</a><a href="index.html#ear">귀</a><a href="index.html#throat">목</a><a href="index.html#nose">코</a></div></div></div><a href="index.html#equip">검사장비</a><a href="index.html#guide" class="on">이용안내</a><a href="index.html#tour">둘러보기</a><a href="faq.html">자주 묻는 질문</a><a href="index.html#visit">오시는 길</a></nav>
 </div></header>
 <main><div class="wrap">
 <a class="back" href="index.html#guide">‹ 이용안내로 돌아가기</a>
@@ -58,5 +59,6 @@ function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return
 box.innerHTML=L.length?L.map(function(x){return'<a href="'+encodeURI(x.file)+'" download><span>'+esc(x.title)+'</span><span class="act">다운로드</span></a>'}).join(""):'<p class="empty">등록된 서식이 없습니다. 대리처방 동의서, 위임장 등이 올라옵니다.</p>';
 })();
 </script>
+<script src="nav.js"></script>
 </body>
 </html>

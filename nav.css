@@ -1,0 +1,12 @@
+/* 상단 메뉴의 '진료 안내' 하위 메뉴 */
+nav .dd{position:static}
+.ddb{font:inherit;font-size:14px;color:var(--ink);background:none;border:0;padding:4px 0;cursor:pointer;white-space:nowrap}
+.ddb:hover,.ddb[aria-expanded="true"]{color:var(--c)}
+.ddb::after{content:"▾";margin-left:4px;font-size:11px}
+.ddb[aria-expanded="true"]::after{content:"▴"}
+.dd-m{position:absolute;left:0;right:0;top:100%;background:#fffaf7;border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(60,30,40,.08)}
+.dd-m[hidden]{display:none}
+.dd-m .wrap{display:flex;gap:6px;padding-top:6px;padding-bottom:6px;flex-wrap:wrap}
+.dd-m a{padding:10px 16px;border-radius:999px;font-size:15px;text-decoration:none;color:var(--ink)}
+.dd-m a:hover{background:var(--c-t);color:var(--c-d)}
+@media(max-width:700px){.dd-m .wrap{flex-direction:row;gap:4px;padding-top:8px;padding-bottom:8px}.dd-m a{padding:8px 14px;font-size:14px}}
