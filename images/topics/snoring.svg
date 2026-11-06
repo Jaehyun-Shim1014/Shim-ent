@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-hidden="true"><rect width="800" height="600" fill="#fbeef0"/>
+<path d="M250 130a110 110 0 1 0 120 150a90 90 0 0 1-120-150z" fill="#f3c9d1"/>
+<g fill="#c4425a" font-family="Georgia,serif" font-weight="700"><text x="430" y="250" font-size="96">Z</text><text x="510" y="190" font-size="72" opacity=".75">Z</text><text x="570" y="140" font-size="52" opacity=".55">z</text></g>
+<g fill="none" stroke="#8f2c40" stroke-width="10" stroke-linecap="round"><path d="M200 420q40-40 80 0t80 0t80 0t80 0t80 0" opacity=".9"/><path d="M230 475q35-32 70 0t70 0t70 0t70 0" opacity=".55"/><path d="M270 525q30-26 60 0t60 0t60 0" opacity=".3"/></g>
+</svg>
