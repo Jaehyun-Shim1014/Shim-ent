@@ -80,6 +80,7 @@ h2{font:700 25px var(--serif);margin:0 0 18px;color:var(--c-d)}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ph.has{border-color:transparent;background:none}
 .panel .st{margin:14px 0 0;padding-left:22px;font-size:15px;color:var(--ink)}.panel .st li{margin:4px 0}
+.panel p+p{margin-top:10px}
 .panel h3{margin:0 0 8px;font-size:18px;color:var(--c-d)}.panel p{margin:0;color:var(--ink);font-size:15.5px}
 @media(max-width:700px){.panel{grid-template-columns:1fr}}
 .btn{display:inline-block;background:var(--c);color:#fff;padding:11px 20px;border-radius:999px;text-decoration:none;font-weight:500;margin-top:18px}
@@ -300,7 +301,7 @@ var TT=S.topics||{};
     [].forEach.call(cb.children,function(x){x.setAttribute("aria-expanded","false");x.classList.remove("on")});
     if(cur===i){cur=-1;pn.hidden=true;return}
     cur=i;b.setAttribute("aria-expanded","true");b.classList.add("on");var it=list[i];
-    pn.innerHTML='<div class="ph">사진 자리'+(it.img?'<img src="'+encodeURI(it.img)+'" alt="'+esc(it.name)+'" onload="this.parentNode.classList.add(\'has\')" onerror="this.remove()">':'')+'</div><div><h3>'+esc(it.name)+'</h3><p>'+esc(it.text)+'</p>'+(it.steps?'<ol class="st">'+it.steps.map(function(x){return'<li>'+esc(x)+'</li>'}).join('')+'</ol>':'')+'</div>';
+    pn.innerHTML='<div class="ph">사진 자리'+(it.img?'<img src="'+encodeURI(it.img)+'" alt="'+esc(it.name)+'" onload="this.parentNode.classList.add(\'has\')" onerror="this.remove()">':'')+'</div><div><h3>'+esc(it.name)+'</h3>'+String(it.text).split('\n').map(function(t){return'<p>'+esc(t)+'</p>'}).join('')+(it.steps?'<ol class="st">'+it.steps.map(function(x){return'<li>'+esc(x)+'</li>'}).join('')+'</ol>':'')+'</div>';
     pn.hidden=false;
   });
 });
