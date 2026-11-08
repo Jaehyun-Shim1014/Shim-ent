@@ -10,3 +10,4 @@ nav .dd{position:static}
 .dd-m a{padding:10px 16px;border-radius:999px;font-size:15px;text-decoration:none;color:var(--ink)}
 .dd-m a:hover{background:var(--c-t);color:var(--c-d)}
 @media(max-width:700px){.dd-m .wrap{flex-direction:row;gap:4px;padding-top:8px;padding-bottom:8px}.dd-m a{padding:8px 14px;font-size:14px}}
+.ddb.on{color:var(--c)}
