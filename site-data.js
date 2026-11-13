@@ -103,9 +103,10 @@ window.SITE = {
   feesUpdated: "",   // 예: "2027-04-01" (표 위에 '최종 수정일'로 표시)
   fees: [],
 
-  /* 서식 자료실: 파일은 forms 폴더에 넣고 아래에 추가하세요. */
+  /* 서식 자료실: 파일은 forms 폴더에 넣고 아래에 추가하세요. 위에 적은 것이 맨 위(최신)에 보입니다.
+     title 제목, file 파일 경로, date 등록일(선택), cat 분류(선택: 예 "처방", "증명서") */
   forms: [
-    // { title: "대리처방 동의서", file: "forms/대리처방_동의서.pdf" },
-    // { title: "위임장", file: "forms/위임장.pdf" }
+    // { title: "대리처방 동의서", file: "forms/대리처방_동의서.pdf", date: "2027-04-01", cat: "처방" },
+    // { title: "위임장", file: "forms/위임장.pdf", date: "2027-04-01", cat: "기타" }
   ]
 };
