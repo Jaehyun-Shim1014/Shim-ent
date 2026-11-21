@@ -103,6 +103,12 @@ window.SITE = {
   feesUpdated: "",   // 예: "2027-04-01" (표 위에 '최종 수정일'로 표시)
   fees: [],
 
+  /* 건강정보 글(health.html): 글 한 편이 한 줄입니다. 글 파일은 health 폴더에 .html로 넣습니다.
+     날짜는 "YYYY-MM-DD", cat은 분류(수면·귀·목·코 등). 위에 적은 것이 맨 위에 보입니다. 글이 하나 이상 생기면 health.html의 noindex 줄을 지우세요. */
+  articles: [
+    // { title: "코골이와 수면무호흡, 무엇이 다른가요?", summary: "한두 줄 요약", cat: "수면", date: "2027-04-10", url: "health/snoring-vs-apnea.html" }
+  ],
+
   /* 서식 자료실: 파일은 forms 폴더에 넣고 아래에 추가하세요. 위에 적은 것이 맨 위(최신)에 보입니다.
      title 제목, file 파일 경로, date 등록일(선택), cat 분류(선택: 예 "처방", "증명서") */
   forms: [

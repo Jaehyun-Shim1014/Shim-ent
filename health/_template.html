@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>글 제목 | 건강정보 | 심재이비인후과</title>
+<meta name="description" content="글 요약(한두 문장)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--c:#c4425a;--c-d:#8f2c40;--c-t:#fbeef0;--bg:#fffaf7;--ink:#2b2226;--mut:#6f6166;--line:#ecdcdf;--serif:"Noto Serif KR",serif;--sans:"Noto Sans KR",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{color-scheme:light}}
+*{box-sizing:border-box}body{margin:0;font:16px/1.7 var(--sans);color:var(--ink);background:var(--bg);word-break:keep-all}
+a{color:var(--c-d)}.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,247,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px var(--serif);color:var(--c-d);text-decoration:none;white-space:nowrap}
+.logo{width:34px;height:34px;border-radius:8px;border:1.5px dashed var(--c);display:grid;place-items:center;font-size:10px;color:var(--c);overflow:hidden;position:relative;flex:none}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
+nav{display:flex;gap:18px;font-size:14px;overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+nav a{text-decoration:none;color:var(--ink);white-space:nowrap;padding:4px 0}nav a:hover,nav a.on{color:var(--c)}
+@media(max-width:700px){header .wrap{flex-direction:column;align-items:flex-start;gap:0;height:auto;padding-top:8px;padding-bottom:4px}nav{width:100%;gap:16px;padding-bottom:6px}}
+main{padding:40px 0 64px;min-height:60vh}
+.back{display:inline-block;font-size:14px;margin-bottom:14px;text-decoration:none}
+h1{font:700 28px var(--serif);margin:0 0 6px;color:var(--c-d)}.sub{color:var(--mut);font-size:14px;margin:0 0 22px}
+.empty{color:var(--mut);padding:28px 0;border-top:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:15px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--c-t);color:var(--c-d);font-weight:500;white-space:nowrap}td.p{white-space:nowrap;text-align:right;font-weight:500}th.p{text-align:right}
+tr:last-child td{border-bottom:0}.cat{color:var(--mut);white-space:nowrap}
+.tw{overflow-x:auto}
+.bar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 12px}
+.bar .cnt{font-size:14px;color:var(--mut)}.bar input{font:inherit;font-size:14.5px;border:1px solid var(--line);border-radius:999px;padding:8px 16px;min-width:220px;background:#fff;color:var(--ink)}
+.bd{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.bd .hd,.bd .rw{display:grid;grid-template-columns:56px 1fr 72px 104px 108px;gap:10px;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line);font-size:15px}
+.bd .hd{background:var(--c-t);color:var(--c-d);font-weight:500;font-size:14px}.bd .rw:last-child{border-bottom:0}
+.bd .n,.bd .dt,.bd .ex{color:var(--mut);font-size:14px}.bd .hd .n,.bd .hd .dt,.bd .hd .ex{color:var(--c-d);font-size:14px}
+.bd .ex b{display:inline-block;font-weight:500;font-size:12px;background:var(--c-t);color:var(--c-d);border-radius:6px;padding:1px 8px}
+.bd .tt .cat{display:inline-block;font-size:12.5px;color:var(--c-d);background:var(--c-t);border-radius:999px;padding:0 9px;margin-right:6px}
+.bd .m{display:none}
+.dl{display:inline-block;text-align:center;text-decoration:none;background:var(--c);color:#fff;border-radius:999px;padding:6px 14px;font-size:14px;white-space:nowrap}.dl:hover{background:var(--c-d)}
+@media(max-width:700px){.bd .hd{display:none}.bd .rw{grid-template-columns:1fr auto;grid-template-areas:"t d" "m d";gap:4px 12px}.bd .n{display:none}.bd .tt{grid-area:t}.bd .ex,.bd .dt{display:inline}.bd .m{display:block;grid-area:m;color:var(--mut);font-size:13px}.bd .rw>.dl{grid-area:d;align-self:center}.bd .ex,.bd .dt{display:none}}
+footer{background:#3a2a2f;color:#e9dcdf;padding:28px 0;font-size:13px}footer p{margin:2px 0}
+:focus-visible{outline:2px solid var(--c-d);outline-offset:2px}
+</style>
+<link rel="stylesheet" href="../nav.css">
+<meta name="robots" content="noindex">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalWebPage","name":"글 제목","inLanguage":"ko","datePublished":"YYYY-MM-DD","author":{"@type":"Physician","name":"심재현"},"publisher":{"@type":"MedicalClinic","name":"심재이비인후과"}}
+</script>
+<style>.art-b h2{font:700 20px var(--serif);margin:28px 0 8px;color:var(--c-d)}.art-b p,.art-b li{font-size:16px}.key{background:var(--c-t);border-radius:12px;padding:14px 16px;margin:0 0 18px}.warn{color:var(--mut);font-size:14px;border-top:1px solid var(--line);padding-top:14px;margin-top:28px}</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="../index.html"><span class="logo">로고<img src="images/logo.png" alt="" onerror="this.remove()"></span>심재이비인후과</a>
+  <nav aria-label="주요 메뉴"><a href="../index.html#intro">병원 소개</a><a href="../index.html#hours">진료 시간</a><div class="dd"><button type="button" class="ddb" aria-expanded="false" aria-controls="ddm">진료 안내</button><div class="dd-m" id="ddm" hidden><div class="wrap"><a href="../care.html#sleep">수면</a><a href="../care.html#ear">귀</a><a href="../care.html#throat">목</a><a href="../care.html#nose">코</a></div></div></div><a href="../index.html#equip">검사장비</a><a href="../index.html#guide" class="on">이용안내</a><a href="../index.html#tour">둘러보기</a><a href="../faq.html">자주 묻는 질문</a><a href="../index.html#visit">오시는 길</a></nav>
+</div></header>
+<main><div class="wrap art-b">
+<a class="back" href="../health.html">‹ 건강정보 목록</a>
+<h1>글 제목</h1>
+<p class="sub">분류 · YYYY-MM-DD · 심재이비인후과 심재현 원장</p>
+<div class="key"><b>핵심 답변</b><br>질문에 대한 결론을 첫 문단에서 먼저 한두 문장으로 씁니다.</div>
+<h2>소제목 1</h2>
+<p>본문. 표와 소제목으로 정리하고 서론은 길게 쓰지 않습니다.</p>
+<h2>이런 경우에는 진료를 받아 보세요</h2>
+<ul><li>진료를 권하는 증상 1</li><li>진료를 권하는 증상 2</li></ul>
+<p class="warn">이 글은 일반적인 건강 정보이며 진단·치료를 대신하지 않습니다. 개인 증상은 진료를 통해 확인해 주세요.</p>
+</div></main>
+<footer><div class="wrap">
+  <p><b>심재이비인후과</b> · 서울특별시 강남구 봉은사로 465 아이타워 5층</p>
+</div></footer>
+<script src="../nav.js"></script>
+</body>
+</html>
